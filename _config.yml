@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "\"머릿속에 다 있어요\""
-title_separator          : " - "
-subtitle                 : "아닐걸 ?" # site tagline that appears below site title in masthead
+title                    : "머릿속에 다 있어요"
+title_separator          : ":"
+subtitle                 : "아닐걸?" # site tagline that appears below site title in masthead
 name                     : "Jaeone94"
 description              : "개발 중에 습득한 기술을 정리하는 기술 블로그 입니다."
 url                      : "https://jaeone94.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Lee Jaeone"
   avatar           : "/assets/images/config/avatar.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "3년차 소프트웨어 프로그래머입니다."
+  bio              : "반갑습니다 :)"
   location         : "대한민국 서울특별시"
   email            :
   links:

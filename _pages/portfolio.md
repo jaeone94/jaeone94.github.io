@@ -1,5 +1,5 @@
 ---
-title: 프로젝트
+title: Projects
 layout: collection
 permalink: /portfolio/
 collection: portfolio
