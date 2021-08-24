@@ -1,7 +1,7 @@
 var store = [{
-        "title": "지킬(jekyll)로 포스팅하기",
-        "excerpt":"포스트 작성 테스트  포스트가 잘 써지는구나 이건 볼드   이텔릭      list1   2   3   List item            야호              인용구 작성할 때    코드 작성할 때 const helloWorld = \"Hello Markdown\"                  표       야호                       가나다라       마바사                 가나다라       마바사                 가나다라       마바사           github link      2   3   4   ","categories": ["생각"],
-        "tags": ["blog","jekyll","github.io"],
-        "url": "/%EC%83%9D%EA%B0%81/%EC%A7%80%ED%82%AC(jekyll)%EB%A1%9C-%ED%8F%AC%EC%8A%A4%ED%8C%85%ED%95%98%EA%B8%B0/",
+        "title": "위대한 여정의 시작",
+        "excerpt":"“준비하시고… 쏘세요 !” 어디서 많이 들어본 말이죠 ? 이 멘트를 기억하고 계신분들이 있을 것 같은데요. 바로 제가 어릴적까지 발행하던 주택복권의 사회자 멘트입니다. 이 구령이 떨어지면, 룰렛 앞에선 사람들이 버튼을 눌러서 화살을 번호가 적힌 룰렛을 향해 발사합니다. 부푼 기대와 함께 복권을 손에 쥔 사람은 다트가 날아가는 찰나의 순간에 ‘혹시 내가 산...","categories": ["잡생각"],
+        "tags": [],
+        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/%EC%9C%84%EB%8C%80%ED%95%9C-%EC%97%AC%EC%A0%95%EC%9D%98-%EC%8B%9C%EC%9E%91/",
         "teaser": "/assets/images/config/default_teaser.png"
       }]
