@@ -500,9 +500,9 @@ IF WHEN 표현식으로 작성해야하며 조건의 결과가 true일 경우 �
 
 <h3 id="그-외에-알아야-할-점">그 외에 알아야 할 점</h3>
 <ol>
-  <li><strong>동일한 이벤트에 여러 트리거가 정의되었을 경우</strong> 
+  <li><strong>동일한 이벤트에 여러 트리거가 정의되었을 경우</strong> : 
  동일한 이벤트에 대해 동일한 종류의 여러 트리거가 정의된 경우 <strong>이름의 알파벳 순서</strong>로 트리거됩니다.</li>
-  <li><strong>트리거 함수에 PROCEDURE 와 FUNCTION의 차이</strong> 
+  <li><strong>트리거 함수에 PROCEDURE 와 FUNCTION의 차이</strong> :
  동작상 차이는 없습니다. 그러나 반드시 프로시저가 아니라 함수가 참조되어야 합니다. 프로시저는 더이상 사용되지 않습니다.</li>
 </ol>
 
@@ -533,25 +533,29 @@ NULL 또는 트리거 함수를 호출한 테이블의 레코드와 정확히 �
 
 <p><strong>규칙</strong></p>
 <ol>
-  <li>BEFORE 트리거가 호출한 함수의 반환값이 NULL 인 경우 일련의 작업이 모두 취소되고 EVENT도 수행되지 않습니다. 트리거를 호출한 테이블의 행이 등록, 수정, 삭제되지 않습니다.</li>
-  <li>INSERT, UPDATE EVENT가 호출한 BEFORE 트리거일 경우 RETURN 하는 레코드 데이터가 트리거를 호출한 테이블에 반영됩니다. (해당 이벤트에 트리거 함수가 하나만 존재할 경우)
+  <li><strong>BEFORE 트리거가 호출한 함수의 반환값이 NULL 인 경우</strong> 
+일련의 작업이 모두 취소되고 EVENT도 수행되지 않습니다. 트리거를 호출한 테이블의 행이 등록, 수정, 삭제되지 않습니다.</li>
+  <li><strong>INSERT, UPDATE EVENT가 호출한 BEFORE 트리거일 경우</strong> 
+RETURN 하는 레코드 데이터가 트리거를 호출한 테이블에 반영됩니다. (해당 이벤트에 트리거 함수가 하나만 존재할 경우)
     <blockquote>
       <p>트리거 함수가 2개 이상 존재할 경우, 알파뱃 순서대로 트리거 함수가 호출되며 이전의 트리거 함수의 RETURN 레코드가 후속 트리거 함수의 NEW에 삽입됩니다.</p>
     </blockquote>
   </li>
-  <li>DELETE EVENT가 호출한 BEFORE 트리거의 경우 RETURN 값의 데이터가 특별히 어떠한 영향을 끼치지 않지만 
+  <li><strong>DELETE EVENT가 호출한 BEFORE 트리거의 경우</strong> 
+RETURN 값의 데이터가 특별히 어떠한 영향을 끼치지 않지만 
 트리거 함수가 2개 이상 존재할 경우, 후속 작업을 수행하기 위해선 반드시 NULL이 아닌 값을 RETURN 해야합니다. 
 **DELETE EVENT 의 트리거일 경우 NEW 값이 NULL 인 것을 잊지마세요 !</li>
-  <li>실행시점이 AFTER인 트리거나 실행범위가 STATEMENT(한번만)인 트리거는 RETURN 값이 무엇이든지 무시합니다.</li>
+  <li><strong>실행시점이 AFTER인 트리거나 실행범위가 STATEMENT(한번만)인 트리거는</strong> 
+RETURN 값이 무엇이든지 무시합니다.</li>
 </ol>
 
 <h3 id="트리거-함수의-특수-변수들">트리거 함수의 특수 변수들</h3>
 <p>선언한 함수가 트리거에게 호출될 때 특수한 변수들이 자동으로 만들어집니다.
 다음은 자주 사용하는 변수들 입니다.</p>
 <ul>
-  <li>NEW ( record ) 
+  <li><strong>NEW</strong> ( record ) 
 EACH ROW(각 행) INSERT, UPDATE 상황에서 새롭게 입력되거나 변경되는 레코드 정보</li>
-  <li>OLD ( record ) 
+  <li><strong>OLD</strong> ( record ) 
 EACH ROW(각 행) UPDATE, DELETE 상황에서 변경되거나, 삭제되는 레코드 정보</li>
 </ul>
 
@@ -583,13 +587,13 @@ EACH ROW(각 행) UPDATE, DELETE 상황에서 변경되거나, 삭제되는 레�
 </table>
 
 <ul>
-  <li>TG_OP ( text ) 
+  <li><strong>TG_OP</strong> ( text ) 
 함수를 호출하게된 트리거 이벤트의 문자열 ( “INSERT”, “UPDATE” 등 )</li>
-  <li>TG_TABLE_NAME ( text ) 
+  <li><strong>TG_TABLE_NAME</strong> ( text ) 
 함수의 호출을 야기한 테이블 이름의 문자열</li>
-  <li>TG_NARGS ( integer )
+  <li><strong>TG_NARGS</strong> ( integer )
 전달된 파라미터의 수</li>
-  <li>TG_ARGV ( text[] )
+  <li><strong>TG_ARGV</strong> ( text[] )
 전달된 파라미터 문자열의 배열</li>
 </ul>
 
