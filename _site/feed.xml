@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-26T00:36:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">머릿속에 다 있어요</title><subtitle>개발 중에 습득한 기술을 정리하는 기술 블로그 입니다.</subtitle><author><name>Lee Jaeone</name></author><entry><title type="html">[postgresql] 트리거를 배워보자</title><link href="http://localhost:4000/db/Postgresql-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="[postgresql] 트리거를 배워보자" /><published>2021-08-26T00:00:00+09:00</published><updated>2021-08-26T00:00:00+09:00</updated><id>http://localhost:4000/db/%5BPostgresql%5D%20%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC%20%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/db/Postgresql-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90/">&lt;p&gt;오늘은 업무를 진행하면서 배웠던 Trigger에 대해 정리해보고자 합니다. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-26T00:46:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">머릿속에 다 있어요</title><subtitle>개발 중에 습득한 기술을 정리하는 기술 블로그 입니다.</subtitle><author><name>Lee Jaeone</name></author><entry><title type="html">[postgresql] 트리거를 배워보자</title><link href="http://localhost:4000/db/Postgresql-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="[postgresql] 트리거를 배워보자" /><published>2021-08-26T00:00:00+09:00</published><updated>2021-08-26T00:00:00+09:00</updated><id>http://localhost:4000/db/%5BPostgresql%5D%20%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC%20%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/db/Postgresql-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90/">&lt;p&gt;오늘은 업무를 진행하면서 배웠던 Trigger에 대해 정리해보고자 합니다. 
 DB 는 Postgresql 13 버젼을 기준으로 기술하였습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;trigger-트리거-란-&quot;&gt;Trigger (트리거) 란 ?&lt;/h2&gt;
@@ -77,31 +77,37 @@ DML은 Data Definition Language의 약자로 데이터베이스에 입력된 데
 &lt;h2 id=&quot;트리거-작성-문법&quot;&gt;트리거 작성 문법&lt;/h2&gt;
 
 &lt;p&gt;postgresql 에서 트리거 작성 문법은 다음과 같습니다.&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;{ }  : 필수선택
 [ ] : 생략가능&lt;/p&gt;
-  &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TRIGGER&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;트리거&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;  
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TRIGGER&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;트리거&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;  
 &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BEFORE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AFTER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INSTEAD&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OF&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;-- 트리거 실행 시점&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DML&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이벤트&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DML&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이벤트&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;-- 트리거 이벤트 (INSERT or UPDATE or DELETE ..)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;트리거를&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;적용시킬&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;또는&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;뷰&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;FOR&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EACH&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ROW&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;STATEMENT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt; 		&lt;span class=&quot;c1&quot;&gt;-- 트리거 실행범위 ( 각행 또는 한번만 )&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; 						&lt;span class=&quot;c1&quot;&gt;-- 트리거 실행 조건( EACH ROW 일 때 조건에 만족하는 행만 수행가능 )&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;EXCUTE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FUNCTION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PROCEDURE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;함수명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&quot;문자열_상수_파라미터&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-  &lt;hr /&gt;
-  &lt;h3 id=&quot;트리거-실행시점&quot;&gt;트리거 실행시점&lt;/h3&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;BEFORE&lt;/strong&gt; : 트리거 이벤트(INSERT or UPDATE ..)가 &lt;strong&gt;실행되기 전&lt;/strong&gt;에 트리거로 야기되는 동작이 수행됩니다. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;트리거-실행시점&quot;&gt;트리거 실행시점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;BEFORE&lt;/strong&gt; : 트리거 이벤트(INSERT or UPDATE ..)가 &lt;strong&gt;실행되기 전&lt;/strong&gt;에 트리거로 야기되는 동작이 수행됩니다. 
 그렇기 때문에 각 행에 대해서 모든 조치가 수행되고 나서 트리거를 적용시킬 테이블 이벤트가 수행됩니다.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;AFTER&lt;/strong&gt; : 트리거 이벤트가 &lt;strong&gt;실행된 후&lt;/strong&gt;에 트리거로 야기되는 동작이 수행됩니다.
+  &lt;li&gt;&lt;strong&gt;AFTER&lt;/strong&gt; : 트리거 이벤트가 &lt;strong&gt;실행된 후&lt;/strong&gt;에 트리거로 야기되는 동작이 수행됩니다.
 때문에 각 행 또는 모든 명령 세트가 수행된 후에 트리거를 적용시킬 테이블 이벤트가 수행됩니다.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;INSTEAD OF&lt;/strong&gt; : &lt;strong&gt;이벤트를 실행하는 대신&lt;/strong&gt; 영향을 받을 각 행에 대해 트리거 조치가 활성화 됩니다. 
-BEFORE , AFTER 트리거와는 달리 &lt;strong&gt;INSTEAD OF 트리거는 테이블이 아니라 뷰(View)에 대해서만 정의할 수 있습니다.&lt;/strong&gt;
+  &lt;li&gt;&lt;strong&gt;INSTEAD OF&lt;/strong&gt; : &lt;strong&gt;이벤트를 실행하는 대신&lt;/strong&gt; 영향을 받을 각 행에 대해 트리거 조치가 활성화 됩니다.
+    &lt;blockquote&gt;
+      &lt;p&gt;BEFORE , AFTER 트리거와는 달리 &lt;strong&gt;INSTEAD OF 트리거는 테이블이 아니라 뷰(View)에 대해서만 정의할 수 있습니다.&lt;/strong&gt;
 게다가 실행 범위가 각 행인 경우에만 정의할 수 있습니다.
 INSTEAD OF 트리거는 원래 삽입, 갱신, 삭제가 불가능한 뷰의 데이터를 조작할 수 있습니다.
-**반대로 BEFORE, AFTER 트리거는 실행범위가 각 행인 경우 테이블(Table)에 대해서만 정의할 수 있습니다.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
+**반대로 BEFORE, AFTER 트리거는 실행범위가 각 행인 경우 테이블(Table)에 대해서만 정의할 수 있습니다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;실행시점에-따른-사용-용도&quot;&gt;실행시점에 따른 사용 용도&lt;/h4&gt;
 &lt;p&gt;트리거 실행 시점이 다른 것은 트리거의 용도가 다른 것을 의미합니다.&lt;/p&gt;

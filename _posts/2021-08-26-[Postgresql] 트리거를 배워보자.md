@@ -76,8 +76,11 @@ DML은 Data Definition Language의 약자로 데이터베이스에 입력된 데
 ## 트리거 작성 문법
 
 postgresql 에서 트리거 작성 문법은 다음과 같습니다. 
->{ }  : 필수선택
+
+> { }  : 필수선택
 [ ] : 생략가능
+
+
 ```sql
 CREATE OR REPLACE TRIGGER 트리거_이름  
 { BEFORE | AFTER | INSTEAD OF }     -- 트리거 실행 시점
@@ -88,6 +91,7 @@ FOR EACH { ROW | STATEMENT } 		-- 트리거 실행범위 ( 각행 또는 한번�
 EXCUTE { FUNCTION | PROCEDURE } 함수명("문자열_상수_파라미터"); 
 ```
 ---
+
 ### 트리거 실행시점 
 - **BEFORE** : 트리거 이벤트(INSERT or UPDATE ..)가 **실행되기 전**에 트리거로 야기되는 동작이 수행됩니다. 
 그렇기 때문에 각 행에 대해서 모든 조치가 수행되고 나서 트리거를 적용시킬 테이블 이벤트가 수행됩니다.

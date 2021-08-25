@@ -404,31 +404,37 @@ DML은 Data Definition Language의 약자로 데이터베이스에 입력된 데
 <h2 id="트리거-작성-문법">트리거 작성 문법</h2>
 
 <p>postgresql 에서 트리거 작성 문법은 다음과 같습니다.</p>
+
 <blockquote>
   <p>{ }  : 필수선택
 [ ] : 생략가능</p>
-  <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TRIGGER</span> <span class="err">트리거</span><span class="n">_</span><span class="err">이름</span>  
+</blockquote>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TRIGGER</span> <span class="err">트리거</span><span class="n">_</span><span class="err">이름</span>  
 <span class="err">{</span> <span class="k">BEFORE</span> <span class="o">|</span> <span class="k">AFTER</span> <span class="o">|</span> <span class="k">INSTEAD</span> <span class="k">OF</span> <span class="err">}</span>     <span class="c1">-- 트리거 실행 시점</span>
 <span class="err">{</span> <span class="n">DML</span><span class="err">이벤트</span> <span class="p">[</span> <span class="k">OR</span> <span class="n">DML</span><span class="err">이벤트</span> <span class="p">...</span> <span class="p">]</span> <span class="err">}</span>     <span class="c1">-- 트리거 이벤트 (INSERT or UPDATE or DELETE ..)</span>
 <span class="k">ON</span> <span class="err">트리거를</span><span class="n">_</span><span class="err">적용시킬</span><span class="n">_</span><span class="err">테이블</span><span class="n">_</span><span class="err">또는</span><span class="n">_</span><span class="err">뷰</span><span class="n">_</span><span class="err">이름</span>
 <span class="k">FOR</span> <span class="k">EACH</span> <span class="err">{</span> <span class="k">ROW</span> <span class="o">|</span> <span class="k">STATEMENT</span> <span class="err">}</span> 		<span class="c1">-- 트리거 실행범위 ( 각행 또는 한번만 )</span>
 <span class="p">[</span><span class="k">WHEN</span> <span class="p">(</span><span class="err">조건</span><span class="p">)]</span> 						<span class="c1">-- 트리거 실행 조건( EACH ROW 일 때 조건에 만족하는 행만 수행가능 )</span>
 <span class="n">EXCUTE</span> <span class="err">{</span> <span class="k">FUNCTION</span> <span class="o">|</span> <span class="k">PROCEDURE</span> <span class="err">}</span> <span class="err">함수명</span><span class="p">(</span><span class="nv">"문자열_상수_파라미터"</span><span class="p">);</span> 
-</code></pre></div>  </div>
-  <hr />
-  <h3 id="트리거-실행시점">트리거 실행시점</h3>
-  <ul>
-    <li><strong>BEFORE</strong> : 트리거 이벤트(INSERT or UPDATE ..)가 <strong>실행되기 전</strong>에 트리거로 야기되는 동작이 수행됩니다. 
+</code></pre></div></div>
+<hr />
+
+<h3 id="트리거-실행시점">트리거 실행시점</h3>
+<ul>
+  <li><strong>BEFORE</strong> : 트리거 이벤트(INSERT or UPDATE ..)가 <strong>실행되기 전</strong>에 트리거로 야기되는 동작이 수행됩니다. 
 그렇기 때문에 각 행에 대해서 모든 조치가 수행되고 나서 트리거를 적용시킬 테이블 이벤트가 수행됩니다.</li>
-    <li><strong>AFTER</strong> : 트리거 이벤트가 <strong>실행된 후</strong>에 트리거로 야기되는 동작이 수행됩니다.
+  <li><strong>AFTER</strong> : 트리거 이벤트가 <strong>실행된 후</strong>에 트리거로 야기되는 동작이 수행됩니다.
 때문에 각 행 또는 모든 명령 세트가 수행된 후에 트리거를 적용시킬 테이블 이벤트가 수행됩니다.</li>
-    <li><strong>INSTEAD OF</strong> : <strong>이벤트를 실행하는 대신</strong> 영향을 받을 각 행에 대해 트리거 조치가 활성화 됩니다. 
-BEFORE , AFTER 트리거와는 달리 <strong>INSTEAD OF 트리거는 테이블이 아니라 뷰(View)에 대해서만 정의할 수 있습니다.</strong>
+  <li><strong>INSTEAD OF</strong> : <strong>이벤트를 실행하는 대신</strong> 영향을 받을 각 행에 대해 트리거 조치가 활성화 됩니다.
+    <blockquote>
+      <p>BEFORE , AFTER 트리거와는 달리 <strong>INSTEAD OF 트리거는 테이블이 아니라 뷰(View)에 대해서만 정의할 수 있습니다.</strong>
 게다가 실행 범위가 각 행인 경우에만 정의할 수 있습니다.
 INSTEAD OF 트리거는 원래 삽입, 갱신, 삭제가 불가능한 뷰의 데이터를 조작할 수 있습니다.
-**반대로 BEFORE, AFTER 트리거는 실행범위가 각 행인 경우 테이블(Table)에 대해서만 정의할 수 있습니다.</li>
-  </ul>
-</blockquote>
+**반대로 BEFORE, AFTER 트리거는 실행범위가 각 행인 경우 테이블(Table)에 대해서만 정의할 수 있습니다.</p>
+    </blockquote>
+  </li>
+</ul>
 
 <h4 id="실행시점에-따른-사용-용도">실행시점에 따른 사용 용도</h4>
 <p>트리거 실행 시점이 다른 것은 트리거의 용도가 다른 것을 의미합니다.</p>
