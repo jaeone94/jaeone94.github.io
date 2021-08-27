@@ -10,4 +10,10 @@ var store = [{
         "tags": ["db","trigger","postgresql"],
         "url": "/db/Postgresql-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EB%A5%BC-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90/",
         "teaser": "/assets/images/config/default_teaser.png"
+      },{
+        "title": "[node.js] express 프레임워크 설치",
+        "excerpt":"인프런 제로쵸님의 “[리뉴얼] Node.js 교과서 - 기본부터 프로젝트 실습까지” 를 수강후기 포스트입니다. Express.js 프레임워크란 ? Node.js를 위한 웹 프레임워크의 하나로 자바스크립트 런타임 환경에서 웹 어플리케이션을 편하게 개발하기 위한 각종 라이브러리와 미들웨어들이 기본 내장되어 있고 프레임워크로서 개발 규칙을 강제하여 코드 구조를 간결하고 통일성있게 유지시켜주는 도구이다. (Express는 유연한 편이다.) Node.js 웹 프레임워크는...","categories": ["Node.js"],
+        "tags": ["Node.js","express"],
+        "url": "/node.js/Node.js-Express-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%84%A4%EC%B9%98/",
+        "teaser": "/assets/images/config/default_teaser.png"
       }]
