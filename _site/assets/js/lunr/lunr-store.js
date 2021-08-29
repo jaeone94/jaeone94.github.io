@@ -16,4 +16,10 @@ var store = [{
         "tags": ["Node.js","express"],
         "url": "/node.js/Node.js-Express-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%84%A4%EC%B9%98/",
         "teaser": "/assets/images/config/default_teaser.png"
+      },{
+        "title": "메타버스에 대한 생각",
+        "excerpt":"오늘은 요즘 유행하는(?) 신조어인 메타버스에 대해 생각해보았다. 생각하게 된 계기는 부모님과 뉴스를 보던 중 코로나가 우리 생활을 과연 어디까지 바꿀 것인지에 대해 얘기를 나누면서다. 먼저 메타버스(metaverse)란 위키백과에서 설명하기를 메타버스(metaverse) 또는 확장 가상 세계는 가상, 초월 의미인 ‘메타’(meta)와 세계, 우주 의미인 ‘유니버스’(universe)를 합성한 신조어다.[1] ‘가상 우주’라고 번역하기도 했다. 이는 3차원에서 실제...","categories": ["잡생각"],
+        "tags": [],
+        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/%EB%A9%94%ED%83%80%EB%B2%84%EC%8A%A4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%83%9D%EA%B0%81/",
+        "teaser": "/assets/images/config/default_teaser.png"
       }]
