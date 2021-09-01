@@ -21,6 +21,10 @@
 <lastmod>2021-08-30T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/node.js/Node.js-Express-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4/</loc>
+<lastmod>2021-09-01T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -37,5 +41,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/_pages/contact/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>

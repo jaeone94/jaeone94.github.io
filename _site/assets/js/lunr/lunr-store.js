@@ -12,7 +12,7 @@ var store = [{
         "teaser": "/assets/images/config/default_teaser.png"
       },{
         "title": "[node.js] express 프레임워크 설치",
-        "excerpt":"인프런 제로쵸님의 “[리뉴얼] Node.js 교과서 - 기본부터 프로젝트 실습까지” 를 수강하고 배운내용을 기록한 포스트입니다. Express.js 프레임워크란 ? Node.js를 위한 웹 프레임워크의 하나로 자바스크립트 런타임 환경에서 웹 어플리케이션을 편하게 개발하기 위한 각종 라이브러리와 미들웨어들이 기본 내장되어 있고 프레임워크로서 개발 규칙을 강제하여 코드 구조를 간결하고 통일성있게 유지시켜주는 도구이다. (Express는 유연한 편이다.) Node.js...","categories": ["Node.js"],
+        "excerpt":"Express.js 프레임워크란 ? Node.js를 위한 웹 프레임워크의 하나로 자바스크립트 런타임 환경에서 웹 어플리케이션을 편하게 개발하기 위한 각종 라이브러리와 미들웨어들이 기본 내장되어 있고 프레임워크로서 개발 규칙을 강제하여 코드 구조를 간결하고 통일성있게 유지시켜주는 도구이다. (Express는 유연한 편이다.) Node.js 웹 프레임워크는 Express 말고도 Nest.js, Hapi.js, Sails.js, Koa.js, Meteor.js 등이 있지만 사실상 Node.js의 웹...","categories": ["Node.js"],
         "tags": ["Node.js","express"],
         "url": "/node.js/Node.js-Express-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%84%A4%EC%B9%98/",
         "teaser": "/assets/images/config/default_teaser.png"
@@ -24,8 +24,14 @@ var store = [{
         "teaser": "/assets/images/config/default_teaser.png"
       },{
         "title": "[node.js] express 프레임워크의 미들웨어",
-        "excerpt":"인프런 제로쵸님의 “[리뉴얼] Node.js 교과서 - 기본부터 프로젝트 실습까지” 를 수강하고 배운내용을 기록한 포스트입니다. 미들웨어란 ? 익스프레스는 가볍고 유연한 웹 프레임워크인데, 이 것은 미들웨어 구조 덕분에 가능한 것이다. 미들웨어는 어플리케이션의 호출과 응답 사이, 즉 중간(middle)에 위치해 요청을 처리하기 때문에 미들웨어라고 한다. 미들웨어는 req, res, next를 매개변수로 가진 함수이다. req, res에...","categories": ["Node.js"],
+        "excerpt":"미들웨어란 ? 익스프레스는 가볍고 유연한 웹 프레임워크인데, 이 것은 미들웨어 구조 덕분에 가능한 것이다. 미들웨어는 어플리케이션의 호출과 응답 사이, 즉 중간(middle)에 위치해 요청을 처리하기 때문에 미들웨어라고 한다. 미들웨어는 req, res, next를 매개변수로 가진 함수이다. req, res에 접근해 요청과 응답을 조작할 수 있으며, next() 함수로 다음 미들웨어로 넘어가는 방식이다. 미들웨어 사용법...","categories": ["Node.js"],
         "tags": ["Node.js","express"],
         "url": "/node.js/Node.js-Express-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%EC%9D%98-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4/",
+        "teaser": "/assets/images/config/default_teaser.png"
+      },{
+        "title": "[node.js] express 자주 사용하는 미들웨어",
+        "excerpt":"오늘은 똑쟁이들이 만들어둔 미들웨어들과 간략한 사용법을 알아보자 dotenv 환경변수를 .env 파일에 정의하고 process.env로 로드할 수 있도록 도와주는 미들웨어다. cookie secret key 나 DB관련 정보같은 보안상 소스코드 상에 노출되면 안되는 정보는 .env라는 환경변수 파일에 저장되는데 선언한 환경변수를 런타임에서 로드할 수 있도록 해준다. 설치 user@myMacbook projectRoot % npm install dotenv .env 파일...","categories": ["Node.js"],
+        "tags": ["Node.js","express","middleware","dotenv","morgan","cookie-parser","json","urlencoded","extends","static"],
+        "url": "/node.js/Node.js-Express-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4/",
         "teaser": "/assets/images/config/default_teaser.png"
       }]
