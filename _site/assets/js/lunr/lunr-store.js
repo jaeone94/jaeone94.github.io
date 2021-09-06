@@ -1,4 +1,16 @@
 var store = [{
+        "title": "[node.js] express router와 rest api 엔드포인트 네이밍 규칙",
+        "excerpt":"Express의 endpoint path들을 구조적으로 관리하기 위한 Router를 알아보도록 하자. route : 길, Router : 길 찾는 놈. 아마 Router 를 배우기 전이라면 app.js 안에 수 없이 많은 api 가 존재할 것이다. end-point 의 종류도 다양할 것이고. 어느정도 규모가 큰 시스템(사실 그렇게 크지 않아도)에선 app.js의 코드행도 굉장히 길어질 것이고. 유지보수에도 난항을...","categories": ["Node.js"],
+        "tags": ["Node.js","express","router","api","end-point"],
+        "url": "/node.js/Node.js-Express-Router%EC%99%80-REST-API-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%84%A4%EC%9D%B4%EB%B0%8D-%EA%B7%9C%EC%B9%99/",
+        "teaser": "/assets/images/config/default_teaser.png"
+      },{
+        "title": "210907 일기",
+        "excerpt":"아직 모르는게 산더미고 배워야할 것도 엄청 많은데. 진도가 잘 안나가는 것 같아 고민이다 ! 글을 하나 작성하는데 굉장히 긴 시간이 걸리는데, 요즘은 글을 잘 쓰기 위해 고민하는 시간이 학습하는 시간보다 많아질 것 같아 걱정이 된다. 하다보면 요령이 생기겠지 ? 그래도 블로그를 시작하기 전 까지는 모르는것을 찾을 때, 다른 블로그를 참고하거나...","categories": ["잡생각"],
+        "tags": [],
+        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/210907-%EC%9D%BC%EA%B8%B0/",
+        "teaser": "/assets/images/config/default_teaser.png"
+      },{
         "title": "위대한 여정의 시작",
         "excerpt":"버튼을 누르다 “준비하시고… 쏘세요 !” 어디서 많이 들어본 말이죠 ? 이 멘트를 기억하고 계신분들이 있을 것 같은데요. 바로 제가 어릴적까지 발행하던 주택복권의 사회자 멘트입니다. 이 구령이 떨어지면, 사람들이 버튼을 눌러서 화살을 번호가 적힌 룰렛을 향해 발사합니다. 부푼 기대와 함께 복권을 손에 쥔 사람은 다트가 날아가는 찰나의 순간에 ‘혹시 내가 산...","categories": ["잡생각"],
         "tags": [],
@@ -33,17 +45,5 @@ var store = [{
         "excerpt":"오늘은 똑쟁이들이 만들어둔 미들웨어들과 간략한 사용법을 알아보자 dotenv 환경변수를 .env 파일에 정의하고 process.env로 로드할 수 있도록 도와주는 미들웨어다. cookie secret key 나 DB관련 정보같은 보안상 소스코드 상에 노출되면 안되는 정보는 .env라는 환경변수 파일에 저장되는데 선언한 환경변수를 런타임에서 로드할 수 있도록 해준다. 설치 user@myMacbook projectRoot % npm install dotenv .env 파일...","categories": ["Node.js"],
         "tags": ["Node.js","express","middleware","dotenv","morgan","cookie-parser","json","urlencoded","extends","static"],
         "url": "/node.js/Node.js-Express-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4/",
-        "teaser": "/assets/images/config/default_teaser.png"
-      },{
-        "title": "[node.js] express router와 rest api 엔드포인트 네이밍 규칙",
-        "excerpt":"Express의 endpoint path들을 구조적으로 관리하기 위한 Router를 알아보도록 하자. route : 길, Router : 길 찾는 놈. 아마 Router 를 배우기 전이라면 app.js 안에 수 없이 많은 api 가 존재할 것이다. end-point 의 종류도 다양할 것이고. 어느정도 규모가 큰 시스템(사실 그렇게 크지 않아도)에선 app.js의 코드행도 굉장히 길어질 것이고. 유지보수에도 난항을...","categories": ["Node.js"],
-        "tags": ["Node.js","express","router","api","end-point"],
-        "url": "/node.js/Node.js-Express-Router%EC%99%80-REST-API-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%84%A4%EC%9D%B4%EB%B0%8D-%EA%B7%9C%EC%B9%99/",
-        "teaser": "/assets/images/config/default_teaser.png"
-      },{
-        "title": "210907 일기",
-        "excerpt":"아직 모르는게 산더미고 배워야할 것도 엄청 많은데. 진도가 잘 안나가는 것 같아 고민이다 ! 글을 하나 작성하는데 굉장히 긴 시간이 걸리는데, 요즘은 글을 잘 쓰기 위해 고민하는 시간이 학습하는 시간보다 많아질 것 같아 걱정이 된다. 하다보면 요령이 생기겠지 ? 그래도 블로그를 시작하기 전 까지는 모르는것을 찾을 때, 다른 블로그를 참고하거나...","categories": ["잡생각"],
-        "tags": [],
-        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/210907-%EC%9D%BC%EA%B8%B0/",
         "teaser": "/assets/images/config/default_teaser.png"
       }]
