@@ -41,9 +41,9 @@ var store = [{
         "url": "/node.js/Node.js-Express-Router%EC%99%80-REST-API-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%84%A4%EC%9D%B4%EB%B0%8D-%EA%B7%9C%EC%B9%99/",
         "teaser": "/assets/images/config/default_teaser.png"
       },{
-        "title": "21 09 07 일기",
+        "title": "210907 일기",
         "excerpt":"아직 모르는게 산더미고 배워야할 것도 엄청 많은데. 진도가 잘 안나가는 것 같아 고민이다 ! 글을 하나 작성하는데 굉장히 긴 시간이 걸리는데, 요즘은 글을 잘 쓰기 위해 고민하는 시간이 학습하는 시간보다 많아질 것 같아 걱정이 된다. 하다보면 요령이 생기겠지 ? 그래도 블로그를 시작하기 전 까지는 모르는것을 찾을 때, 다른 블로그를 참고하거나...","categories": ["잡생각"],
         "tags": [],
-        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/21-09-07-%EC%9D%BC%EA%B8%B0/",
+        "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/210907-%EC%9D%BC%EA%B8%B0/",
         "teaser": "/assets/images/config/default_teaser.png"
       }]
