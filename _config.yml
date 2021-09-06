@@ -230,6 +230,8 @@ plugins:
   - jekyll-include-cache  	
   - jekyll-figure
 
+future: true
+
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
