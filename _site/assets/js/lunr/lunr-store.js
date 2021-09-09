@@ -46,4 +46,10 @@ var store = [{
         "tags": [],
         "url": "/%EC%9E%A1%EC%83%9D%EA%B0%81/210907-%EC%9D%BC%EA%B8%B0/",
         "teaser": "/assets/images/config/default_teaser.png"
+      },{
+        "title": "[node.js] sequelize(시퀄라이즈)를 사용해서 rdb와 통신하기",
+        "excerpt":"Api 서버를 구축하고자 할 때 DB와의 연결은 필수적이라고 할 수 있다. 오늘은 시퀄라이즈 라이브러리를 사용해서 DB와 연결하고 CRUD 기능을 수행해보자. 시퀄라이즈 ? 다양한 RDB와 호환되는 ORM(Object Relational Mapping) 라이브러리. (ex. maria, postgre, sqlite, mssql .. ) Javascript 문법으로 RDB를 조작할 수 있도록 도와준다. Step 1 실행환경 세팅 (1) 먼저 DB가...","categories": ["Node.js"],
+        "tags": ["Node.js","express","sequelize","db","api"],
+        "url": "/node.js/node.js-sequelize(%EC%8B%9C%ED%80%84%EB%9D%BC%EC%9D%B4%EC%A6%88)%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-RDB%EC%99%80-%ED%86%B5%EC%8B%A0%ED%95%98%EA%B8%B0/",
+        "teaser": "/assets/images/config/default_teaser.png"
       }]
