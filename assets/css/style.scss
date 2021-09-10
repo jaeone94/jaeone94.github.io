@@ -1,0 +1,92 @@
+---
+---
+
+/*
+  If the number of TAB files has changed, the following variable is required.
+  And it must be defined before `@import`.
+*/
+$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
+
+@import "{{ site.theme }}";
+
+/* append your custom style below */
+.highlight2 table td { padding: 5px; }
+.highlight2 table pre { margin: 0; }
+.highlight2, .highlight2 .w {
+  color: #586e75;
+}
+.highlight2 .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight2 .c, .highlight2 .ch, .highlight2 .cd, .highlight2 .cm, .highlight2 .cpf, .highlight2 .c1, .highlight2 .cs {
+  color: #657b83;
+}
+.highlight2 .cp {
+  color: #b58900;
+}
+.highlight2 .nt {
+  color: #b58900;
+}
+.highlight2 .o, .highlight2 .ow {
+  color: #93a1a1;
+}
+.highlight2 .p, .highlight2 .pi {
+  color: #93a1a1;
+}
+.highlight2 .gi {
+  color: #859900;
+}
+.highlight2 .gd {
+  color: #dc322f;
+}
+.highlight2 .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight2 .k, .highlight2 .kn, .highlight2 .kp, .highlight2 .kr, .highlight2 .kv {
+  color: #6c71c4;
+}
+.highlight2 .kc {
+  color: #cb4b16;
+}
+.highlight2 .kt {
+  color: #cb4b16;
+}
+.highlight2 .kd {
+  color: #cb4b16;
+}
+.highlight2 .s, .highlight2 .sb, .highlight2 .sc, .highlight2 .dl, .highlight2 .sd, .highlight2 .s2, .highlight2 .sh, .highlight2 .sx, .highlight2 .s1 {
+  color: #859900;
+}
+.highlight2 .sa {
+  color: #6c71c4;
+}
+.highlight2 .sr {
+  color: #2aa198;
+}
+.highlight2 .si {
+  color: #d33682;
+}
+.highlight2 .se {
+  color: #d33682;
+}
+.highlight2 .nn {
+  color: #b58900;
+}
+.highlight2 .nc {
+  color: #b58900;
+}
+.highlight2 .no {
+  color: #b58900;
+}
+.highlight2 .na {
+  color: #268bd2;
+}
+.highlight2 .m, .highlight2 .mb, .highlight2 .mf, .highlight2 .mh, .highlight2 .mi, .highlight2 .il, .highlight2 .mo, .highlight2 .mx {
+  color: #859900;
+}
+.highlight2 .ss {
+  color: #859900;
+}

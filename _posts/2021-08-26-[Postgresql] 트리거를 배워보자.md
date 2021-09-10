@@ -1,7 +1,6 @@
 ---
-layout: single
-category: DB
-tags: ['db', 'trigger', 'postgresql']
+category: [DB, Postgresql]
+tags: ['db', 'sql', 'trigger', 'postgresql']
 # published : false
 toc: true
 toc_sticky: true
