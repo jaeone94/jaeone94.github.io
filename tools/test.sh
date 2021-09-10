@@ -58,6 +58,7 @@ if $_build; then
   JEKYLL_ENV=production bundle exec jekyll
 fi
 
+
 bundle exec htmlproofer "$DEST" \
   --disable-external \
   --check-html \
