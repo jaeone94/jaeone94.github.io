@@ -124,7 +124,6 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer (~> 3.18)
-  jekyll-seo-tag
   jekyll-theme-chirpy!
   jemoji
   tzinfo (~> 1.2)
